@@ -54,7 +54,19 @@ public class SkillsController {
 
 
     @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, value = "hello")
-    public String helloPost(@RequestParam String name, @RequestParam String language) {
-        return "";
+    public String helloPost(@RequestParam String name, @RequestParam String lang1, @RequestParam String lang2, @RequestParam String lang3) {
+        if (name.isBlank()) {
+            name = "Blank name";
+        }
+        return "<html>" +
+                "<body>" +
+                "<h1>" + name + "</h1>" +
+                "<ol>" +
+                "<li>" + lang1 + "</li>" +
+                "<li>" + lang2 + "</li>" +
+                "<li>" + lang3 + "</li>" +
+                "</ol>" +
+                "</body>" +
+                "</html>";
     }
 }
